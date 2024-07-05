@@ -1,0 +1,53 @@
+{
+	"manifest_version": 1,
+	"type":"WebApp",
+	"meta":{
+		"name":"Youtube Music",
+		"version":"1.0",
+		"minimum-overwolf-version": "0.77.4.0",
+		"author":"Bluscream",
+		"description":"Youtube Music Web App for Overwolf",
+        "dock_button_title": "Youtube Music",
+        "icon": "icons/IconMouseNormal.png",
+        "icon_gray": "icons/IconMouseNormal.png",
+        "launcher_icon": "icons/IconMouseNormal.ico",
+        "window_icon": "icons/IconMouseNormal.png"
+	},
+	"data": {
+		"start_window":"index",
+		"windows":{
+			"index":{
+				"file":"index.html",
+				"transparent":true,
+				"resizable":true,
+				"show_in_taskbar": true,
+				"size": {
+					"width": 800,
+					"height": 600
+				},
+				"start_position": {
+					"Top": 100,
+					"Left": 200
+				}
+			}
+		},
+		"externally_connectable" : {
+			"matches" : []
+		},
+		"content_scripts" : [
+			{
+				"matches" : [ "https://music.youtube.com/*" ],
+				"css" : [ ],
+				"js" : [ ]
+			}
+		],
+		"hotkeys" : {
+			"open" : {
+				"title" : "Youtube Music",
+				"category" : "Apps",
+				"default" : "Ctrl+Shift+V",
+				"action-type" : "toggle"
+			}
+		}
+	}
+}
